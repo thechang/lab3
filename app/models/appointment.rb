@@ -11,12 +11,12 @@ class Appointment < ActiveRecord::Base
     
     def Appointment.modifyAppointment (appointment_id, medic_id, begin_time, end_time)
 	if (appointment_id != nil)
-	cita = Appointment.where(:id => appointment_id).first
-	cita.id = appointment_id
-	cita.medic_id = medic_id
-	cita.begin_time = begin_time
-	cita.end_time = end_time
-	cita.save
+	  cita = Appointment.where(:id => appointment_id).first
+	  cita.id = appointment_id
+	  cita.medic_id = medic_id
+	  cita.begin_time = begin_time
+	  cita.end_time = end_time
+	  cita.save
 	else
 	  puts "no existe ese id"
 	end
