@@ -24,7 +24,11 @@ class Appointment < ActiveRecord::Base
       
     def Appointment.deleteAppointment (appointment_id)
 	cita = Appointment.where(:id => appointment_id).first
-	Appointment.delete(cita.id)
+	if (cita == nil)
+	   puts "este id de la cita no existe"
+	else
+	  Appointment.delete(cita.id)
+	end
     end
   
 end
