@@ -24,7 +24,7 @@ class Appointment < ActiveRecord::Base
       
     def Appointment.deleteAppointment (appointment_id)
 	cita = Appointment.where(:id => appointment_id).first
-	cita.delete
+	Appointment.delete(cita.id)
     end
   
 end
